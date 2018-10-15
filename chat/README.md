@@ -1,3 +1,8 @@
+// Test step
+yarn install
+yarn add react-native-gifted-chat
+react-native run-ios
+
 ## Run the example
 
 ```
