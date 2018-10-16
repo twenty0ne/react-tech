@@ -10,7 +10,7 @@ import {GiftedChat, Actions, Bubble, SystemMessage} from 'react-native-gifted-ch
 import CustomActions from './CustomActions';
 import CustomView from './CustomView';
 
-export default class Example extends React.Component {
+export default class ChatApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
