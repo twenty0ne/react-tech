@@ -1,32 +1,25 @@
-var pomelo = require('pomelo');
-var routeUtil = require('./app/util/routeUtil');
-/**
- * Init app for client.
- */
-var app = pomelo.createApp();
-app.set('name', 'chatofpomelo');
+var express = require('express');
+var app = express();
+var expressWs = require('express-ws')(app);
 
-
-// app configure
-app.configure('production|development', function() {
-	// route configures
-	app.route('chat', routeUtil.chat);
-	app.set('connectorConfig', {
-		connector: pomelo.connectors.sioconnector,
-		// 'websocket', 'polling-xhr', 'polling-jsonp', 'polling'
-		transports: ['websocket', 'polling'],
-		heartbeats: true,
-		closeTimeout: 60 * 1000,
-		heartbeatTimeout: 60 * 1000,
-		heartbeatInterval: 25 * 1000
-	});
-	// filter configures
-	app.filter(pomelo.timeout());
+app.use(function(req, res, next){
+	console.log('middleware');
+	req.testing = 'testing';
+	return next();
 });
 
-// start app
-app.start();
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function (req, res) {
+	res.send('hello world')
+});
 
-process.on('uncaughtException', function(err) {
-	console.error(' Caught exception: ' + err.stack);
+app.ws('/', function(ws, req){
+	ws.on('message', function(msg){
+		console.log(msg);
+	});
+	console.log('socket', req.testing);
+});
+
+app.listen(3000, function(){
+	console.log('app run on port 3000.')
 });
