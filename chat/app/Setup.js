@@ -29,7 +29,7 @@ function Setup(): ReactClass<{}>{
 
 		render() {
 			if (this.state.isLoading) {
-				// return <
+				return <LaunchScreen />
 			}
 		}
 	}
