@@ -4,4 +4,4 @@ import {
 
 import Setup from './app/Setup';
 
-AppRegistry.registerComponent('Chat', () => Setup);
+AppRegistry.registerComponent('GiftedChat', () => Setup);
