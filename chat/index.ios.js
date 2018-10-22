@@ -2,6 +2,6 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import ChatApp from './app/ChatApp';
+import Setup from './app/Setup';
 
-AppRegistry.registerComponent('GiftedChat', () => ChatApp);
+AppRegistry.registerComponent('GiftedChat', () => Setup);

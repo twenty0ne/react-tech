@@ -4,8 +4,9 @@ import React from "react";
 import LaunchScreen from "./common/LaunchScreen";
 import { Provider } from "react-redux";
 import { Text, View } from "react-native";
+import ChatApp from "./ChatApp";
 
-function setup(): ReactClass<{}>{
+// function setup(): ReactClass<{}>{
 
 	class Root extends React.Component {
 		constructor() {
@@ -16,32 +17,28 @@ function setup(): ReactClass<{}>{
 			};
 		}
 
-		// componentDidMount() {
-		// 	// NOTE:
-		// 	// 可以添加一些预加载的东西
-		// 	this.timer = setTimeout(()=>{
-		// 		console.log("end timeout 2s");
-		// 		this.state.isLoading = false;
-		// 	}, 2000);
-		// }
+		componentDidMount() {
+			// NOTE:
+			// 可以添加一些预加载的东西
+			this.timer = setTimeout(()=>{
+				console.log("end timeout 2s");
+				this.setState({isLoading: false});
+			}, 2000);
+		}
 
-		// componentWillUnmount() {
-		// 	this.timer && clearTimeout(this.timer);
-		// }
+		componentWillUnmount() {
+			this.timer && clearTimeout(this.timer);
+		}
 
 		render() {
-			// if (this.state.isLoading) {
-				// return <LaunchScreen />
-				return (
-					<View>
-						<Text>Hello world!</Text>
-					</View>
-				);
-			//}
+			if (this.state.isLoading) {
+				return <LaunchScreen />;
+			}
+			return <ChatApp />;
 		}
 	}
 
-	return Root;
-}
+//	return Root;
+// }
 
-module.exports = setup;
+module.exports = Root;
