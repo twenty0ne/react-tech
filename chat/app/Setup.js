@@ -5,6 +5,7 @@ import LaunchScreen from "./common/LaunchScreen";
 import { Provider } from "react-redux";
 import { Text, View } from "react-native";
 import ChatApp from "./ChatApp";
+import TestScreen from "./TestScreen";
 
 // function setup(): ReactClass<{}>{
 
@@ -31,10 +32,11 @@ import ChatApp from "./ChatApp";
 		}
 
 		render() {
-			if (this.state.isLoading) {
-				return <LaunchScreen />;
-			}
-			return <ChatApp />;
+			// if (this.state.isLoading) {
+			// 	return <LaunchScreen />;
+			// }
+			// return <ChatApp />;
+			return <TestScreen />
 		}
 	}
 
