@@ -1,7 +1,7 @@
 "use strict";
 
 import React from "react";
-import LaunchScreen from "./common/LaunchScreen";
+import LaunchScreen from "./launch/LaunchScreen";
 import { Provider } from "react-redux";
 import { Text, View } from "react-native";
 import ChatApp from "./ChatApp";
@@ -33,10 +33,10 @@ import TestScreen from "./TestScreen";
 
 		render() {
 			// if (this.state.isLoading) {
-			// 	return <LaunchScreen />;
+			return <LaunchScreen />;
 			// }
 			// return <ChatApp />;
-			return <TestScreen />
+			// return <TestScreen />
 		}
 	}
 
