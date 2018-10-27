@@ -8,6 +8,10 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+
+let store = createStore(todoApp);
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
