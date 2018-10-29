@@ -1,8 +1,9 @@
 import React from 'react'
+import { View } from 'react-native'
 import FilterLink from '../containers/FilterLink'
 
 const Footer = ()=> {
-	<p>
+	<View>
 		Show: 
 		{' '}
 		<FilterLink filter="SHOW_ALL">
@@ -16,7 +17,7 @@ const Footer = ()=> {
 		<FilterLink filter="SHOW_COMPLETED">
 			Completed
 		</FilterLink>
-	</p>
+	</View>
 }
 
 export default Footer
