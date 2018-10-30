@@ -24,13 +24,15 @@ import { addTodo } from '../actions'
       // </form>
 
 let AddTodo = ({ dispatch }) => {
-  let input
 
-  
+  onAddTodo = () => {
+    console.log("onAddTodo")
+  }
 
   return (
     <View>
       <Button
+        onPress={this.onAddTodo}
         title="Add Todo"
       />
     </View>
