@@ -14,7 +14,7 @@ class Main extends React.Component {
 		</View>
 		*/
 		return (
-			<View>
+			<View style={{flex: 1}}>
 				<AddTodo />
 			</View>
 		)
