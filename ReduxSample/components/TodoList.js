@@ -5,7 +5,7 @@ import Todo from './Todo';
 
 const TodoList = ({ todos, onTodoClick }) => {
 	return (
-		<View>
+		<View style={{flex: 1}}>
 			{
 				todos.map((todo, index)=> {
 					return (

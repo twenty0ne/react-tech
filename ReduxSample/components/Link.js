@@ -6,22 +6,25 @@ import {
 	StyleSheet
 } from 'react-native'
 
+/*
+
+		*/
+
 const Link = ({active, children, onClick})=> {
 	// if (active) {
-	// 	return <Text>{children}</Text>
+	// 	<Text style={styles.text}>{children}</Text>
 	// }
+	var touchStyle = [styles.button];
+	if (active) {
+		touchStyle.push(styles.active);
+	}
 
 	return (
-		<TouchableOpacity
-			stype={styles.button} 
-			onPress={()=>{
-				onClick()
-			}}
-		>
+		<TouchableOpacity style={touchStyle} onPress={()=>{onClick()}}>
 			<Text style={styles.text}>{children}</Text>
 		</TouchableOpacity>
 	)
-};
+}
 
 // Link.propTypes = {
 // 	active: PropTypes.bool.isRequired,
@@ -31,12 +34,17 @@ const Link = ({active, children, onClick})=> {
 
 const styles = StyleSheet.create({
 	button: {
-		flex: 1
+		flex: 1,
+		paddingTop: 20,
+		paddingBottom: 20
 	},
 	text: {
-		color: '#ff0000',
+		color: '#fff000',
 		textAlign: 'center',
 		fontWeight: 'bold'
+	},
+	active: {
+		backgroundColor: '#70a743'
 	}
 })
 

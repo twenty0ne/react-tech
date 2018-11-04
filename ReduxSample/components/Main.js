@@ -1,18 +1,17 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
+import Header from './Header'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
-
-
 
 class Main extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<AddTodo />
+				<Header />
 				<VisibleTodoList />
-				<Footer stype={{flex: 1}} />
+				<Footer />
 			</View>
 		)
 	}
