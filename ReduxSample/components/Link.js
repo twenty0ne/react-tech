@@ -2,22 +2,23 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import {
 	TouchableOpacity,
-	Text
+	Text,
+	StyleSheet
 } from 'react-native'
 
 const Link = ({active, children, onClick})=> {
-	if (active) {
-		return <Text>{children}</Text>
-	}
+	// if (active) {
+	// 	return <Text>{children}</Text>
+	// }
 
 	return (
 		<TouchableOpacity
-			href="" 
+			stype={styles.button} 
 			onPress={()=>{
 				onClick()
 			}}
 		>
-			<Text>{children}</Text>
+			<Text style={styles.text}>{children}</Text>
 		</TouchableOpacity>
 	)
 };
@@ -27,5 +28,16 @@ const Link = ({active, children, onClick})=> {
 // 	children: PropTypes.node.isRequired,
 // 	onClick: PropTypes.func.isRequired
 // }
+
+const styles = StyleSheet.create({
+	button: {
+		flex: 1
+	},
+	text: {
+		color: '#ff0000',
+		textAlign: 'center',
+		fontWeight: 'bold'
+	}
+})
 
 export default Link;
