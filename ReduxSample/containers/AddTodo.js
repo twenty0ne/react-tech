@@ -19,6 +19,12 @@ let AddTodo = ({ dispatch }) => {
       <TextInput
         style={styles.input}
         placeholder="Add a new todo..."
+        onChangeText={text=>{
+          input=text
+        }}
+        onSubmitEditing={()=>{
+          dispatch(addTodo(input))
+        }}
       >
       </TextInput>
     </View>
@@ -54,23 +60,6 @@ const styles = StyleSheet.create({
     input: {
         height: 40,
         flex: 1
-    },
-    btn: {
-        width: 55,
-        height: 44,
-        marginLeft: 5,
-        marginRight: 5,
-        backgroundColor: '#23beff',
-        borderRadius: 4,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    search: {
-        flex: 1,
-        fontSize: 16,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        lineHeight: 44
     }
 });
 
