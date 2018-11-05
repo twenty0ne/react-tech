@@ -1,7 +1,11 @@
 import React from 'react';
-import { View } from 'react-native'
+import { 
+	View,
+	Text
+} from 'react-native'
 import PropTypes from 'prop-types';
 import Todo from './Todo';
+import AddTodo from '../containers/AddTodo'
 
 const TodoList = ({ todos, onTodoClick }) => {
 	return (
@@ -15,6 +19,7 @@ const TodoList = ({ todos, onTodoClick }) => {
 					)
 				})
 			}
+			<AddTodo />
 		</View>
 	)
 };

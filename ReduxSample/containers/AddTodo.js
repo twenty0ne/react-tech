@@ -16,6 +16,14 @@ let AddTodo = ({ dispatch }) => {
 
   return (
     <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Add a new todo..."
+      >
+      </TextInput>
+    </View>
+    /*
+    <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput style={styles.input}
           onChangeText={text=>{
@@ -33,27 +41,19 @@ let AddTodo = ({ dispatch }) => {
         </Text>
       </TouchableOpacity>
     </View>
+    */
   )
 }
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        justifyContent: "flex-end",
-        alignItems: 'center',
-        height: 44,
-        marginTop: 50
-    },
-    inputContainer: {
-        flex: 1,
-        marginLeft: 5,
+        paddingLeft: 40,
+        paddingRight: 10,
     },
     input: {
-        height: 44,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 4,
-        paddingLeft: 5
+        height: 40,
+        flex: 1
     },
     btn: {
         width: 55,
