@@ -101,21 +101,21 @@ class WatchRecord extends Component {
     };
 
     render() {
-            let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }),
-                theDataSource = ds.cloneWithRows(this.props.record);
-            return (
-                    <ListView
-				style={styles.recordList}
-				dataSource={theDataSource}
-				renderRow={(rowData) => 
-					<View style={styles.recordItem}>
-						<Text style={styles.recordItemTitle}>{rowData.title}</Text>
-						<View style={{alignItems: "center"}}>
-							<Text style={styles.recordItemTime}>{rowData.time}</Text>
-						</View>
-					</View>}/>
-		);
-	}
+      let ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 }),
+      theDataSource = ds.cloneWithRows(this.props.record);
+      return (
+        <ListView
+          style={styles.recordList}
+          dataSource={theDataSource}
+          renderRow={(rowData) => 
+            <View style={styles.recordItem}>
+              <Text style={styles.recordItemTitle}>{rowData.title}</Text>
+              <Text style={styles.recordItemTime}>{rowData.time}</Text>
+            </View>
+          }
+        />
+      );
+    }
 }
 
 export default class extends Component{
@@ -246,6 +246,7 @@ export default class extends Component{
       <View style={styles.watchContainer}>
         <WatchFace totalTime={this.state.totalTime} sectionTime={this.state.sectionTime}></WatchFace>
         <WatchControl addRecord={()=>this._addRecord()} clearRecord={()=>this._clearRecord()} startWatch={()=>this._startWatch()} stopWatch={()=>this._stopWatch()}></WatchControl>
+        <WatchRecord record={this.state.record}></WatchRecord>
       </View>
     )
   }
@@ -289,10 +290,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#f3f3f3",
     paddingTop: 30,
-    paddingLeft: 60,
-    paddingRight: 60,
+    paddingLeft: 70,
+    paddingRight: 70,
     paddingBottom: 0,
-	},
+    alignItems: "center",
+  },
 	btnStart:{
     width: 70,
     height: 70,
@@ -302,17 +304,50 @@ const styles = StyleSheet.create({
     justifyContent: "center"
 	},
 	btnStop:{
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center"
 	},
 	btnStartText:{
+    fontSize: 14,
+    backgroundColor: "transparent"
 	},
 	btnStopText:{
+    fontSize: 14,
+    backgroundColor: "transparent",
+    color: "#555"
 	},
 	recordList:{
+    width: Util.size.width,
+    height: Util.size.height - 300,
+    paddingLeft: 15
 	},
 	recordItem:{
+    height: 40,
+    borderBottomWidth: Util.pixel,
+    borderBottomColor: "#bbb",
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 5,
+    flexDirection: "row",
+    alignItems: "center"
 	},
 	recordItemTitle:{
+    backgroundColor: "transparent",
+    flex: 1,
+    textAlign: "left",
+    paddingLeft: 20,
+    color: "#777"
 	},
 	recordItemTime:{
+    backgroundColor: "transparent",
+    flex: 1,
+    textAlign: "right",
+    paddingRight: 20,
+    color: "#222"
 	},
 });
