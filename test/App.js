@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 import Day1 from './src/day1';
+import Day2 from './src/day2';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -24,7 +25,7 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <Day1 />
+      <Day2 />
     )
   }
 }

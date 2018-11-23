@@ -7,6 +7,7 @@
 'use strict';
 
 import React,{ Component } from 'react';
+import PropTypes from 'prop-types';
 import { Platform,Image,ScrollView,StatusBar,StyleSheet,Text,TouchableHighlight,View } from 'react-native';
 import Util from './utils';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -16,7 +17,7 @@ const weatherData = [{key:0,city:"\u798f\u5dde",night:!0,bg:require("./img/w2.pn
 
 class Weather extends Component{
   static propTypes = {
-    back: React.PropTypes.func.isRequired,
+    back: PropTypes.func.isRequired,
   };
 
   constructor(props) {
