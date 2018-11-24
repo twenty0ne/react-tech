@@ -164,7 +164,7 @@ class Weather extends Component{
         paginationStyle={{bottom:10, paddingTop:10, borderTopColor:"rgba(255,255,255,0.7)",borderTopWidth:Util.pixel}}
         dot={<View style={{backgroundColor: 'rgba(255,255,255,0.2)', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
         activeDot={<View style={{backgroundColor: 'rgba(255,255,255,0.5)', width: 6, height: 6, borderRadius: 3, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}>
-                {slides}
+        {slides}
         </Swiper>
         <TouchableHighlight onPress={()=>this._back()} style={styles.backBtn}>
           <Icon size={17} name="ios-list-outline" style={styles.backBtnIcon}></Icon>
@@ -190,13 +190,9 @@ export default class extends Component{
 }
 
 const styles = StyleSheet.create({
-  pageContainer:{
+  weatherContainer:{
     backgroundColor:"transparent",
-    position: "absolute",
-    width: Util.size.width,
-    left:0,
-    top: 20,
-    height: Util.size.height - 53
+    alignItems:"center",
   },
   headInfo:{
     paddingTop:70,
@@ -404,4 +400,29 @@ const styles = StyleSheet.create({
   backBtnIcon:{
     color:"#fff"
   },
+  wrapper: {
+  },
+   slide1: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#9DD6EB',
+  },
+  slide2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#97CAE5',
+  },
+  slide3: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#92BBD9',
+  },
+  text: {
+    color: '#fff',
+    fontSize: 30,
+    fontWeight: 'bold',
+  }
 })
