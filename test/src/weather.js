@@ -167,7 +167,7 @@ class Weather extends Component{
         {slides}
         </Swiper>
         <TouchableHighlight onPress={()=>this._back()} style={styles.backBtn}>
-          <Icon size={17} name="ios-list-outline" style={styles.backBtnIcon}></Icon>
+          <Icon size={17} name="ios-list" style={styles.backBtnIcon}></Icon>
         </TouchableHighlight>
       </View>
     )
@@ -193,6 +193,23 @@ const styles = StyleSheet.create({
   weatherContainer:{
     backgroundColor:"transparent",
     alignItems:"center",
+  },
+  image:{
+    height:140,
+    width:100,
+    marginRight:5,
+    alignItems:"flex-end",
+    justifyContent:"flex-end",
+    paddingBottom:5,
+    paddingRight:10,
+  },
+  pageContainer:{
+    backgroundColor:"transparent",
+    position: "absolute",
+    width: Util.size.width,
+    left:0,
+    top: 20,
+    height: Util.size.height - 53
   },
   headInfo:{
     paddingTop:70,
@@ -402,27 +419,4 @@ const styles = StyleSheet.create({
   },
   wrapper: {
   },
-   slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
-  slide2: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
-  },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
-  }
 })

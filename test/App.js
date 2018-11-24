@@ -9,8 +9,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-import watch from './src/watch';
-import weather from './src/weather';
+import Watch from './src/watch';
+import Weather from './src/weather';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -25,7 +25,7 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <weather />
+      <Weather />
     )
   }
 }
