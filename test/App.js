@@ -12,6 +12,7 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import Watch from './src/watch';
 import Weather from './src/weather';
 import Twitter from './src/twitter';
+import MyMap from './src/map';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -26,7 +27,7 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <Twitter />
+      <MyMap />
     )
   }
 }
