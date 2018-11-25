@@ -113,13 +113,16 @@ class TwitterFlow extends Component{
 }
 
 class FacebookTabBar extends Component {
-  tabIcons: [];
+    static propTypes = {
+      goToPage: PropTypes.func,
+      activeTab: PropTypes.number,
+      tabs: PropTypes.array,
+    };
 
-  propTypes: {
-    goToPage: PropTypes.func,
-    activeTab: PropTypes.number,
-    tabs: PropTypes.array,
-  };
+  constructor() {
+    super();
+    this.tabIcons = [];
+  }
 
   componentDidMount() {
     setTimeout( () => this.props.goToPage(0), 0 );
@@ -257,7 +260,7 @@ class TwitterTab extends Component{
             <TwitterPost tabLabel="ios-person" />
           </ScrollableTabView>
         </View>;
-    return Platform.OS === "ios"? iosTabView:androidTabView;
+    return Platform.OS == 'ios' ? iosTabView : androidTabView;
   }
 }
 
