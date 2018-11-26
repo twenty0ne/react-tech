@@ -13,6 +13,7 @@ import Watch from './src/watch';
 import Weather from './src/weather';
 import Twitter from './src/twitter';
 import MyMap from './src/map';
+import Tweet from './src/tweet';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -27,7 +28,7 @@ export default class App extends Component<Props> {
 
   render() {
     return (
-      <MyMap />
+      <Tweet />
     )
   }
 }
