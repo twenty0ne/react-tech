@@ -1,3 +1,5 @@
+.eslintrc.js
+
 .project
 */node-log.log
 logs/*.log

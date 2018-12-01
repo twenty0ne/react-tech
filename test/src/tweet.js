@@ -70,7 +70,7 @@ class FunctionView extends Component{
             <Icon name="ios-videocam" size={80} color="#2aa2ef"></Icon>
           </View>
             { this.state.images.map((image,index) => <View key={index} style={styles.imageIcon}><Image style={styles.image} source={{ uri: image.uri }} /></View>) }
-          </View>
+        </View>
       </View>
     )
   }
